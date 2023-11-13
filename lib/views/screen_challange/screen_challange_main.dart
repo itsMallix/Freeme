@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ScreenClansJoin extends StatelessWidget {
-  const ScreenClansJoin({super.key});
+class ScreenChallangeMain extends StatelessWidget {
+  const ScreenChallangeMain({super.key});
 
   @override
   Widget build(BuildContext context) {
