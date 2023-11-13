@@ -36,4 +36,10 @@ class ColorSystem {
       Color(0xffff2264),
     ],
   );
+  static const RadialGradient gradient_voidPurple = RadialGradient(
+    colors: [
+      Color(0xffF260FF),
+      Color(0xff7622FF),
+    ],
+  );
 }
