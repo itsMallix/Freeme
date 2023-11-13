@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DesignSystem {
-  DesignSystem._();
+class ColorSystem {
+  ColorSystem._();
   static const Color primary_darkPurple = Color(0xff281b41);
   static const Color primary_electricIndigo = Color(0xff7622ff);
   static const Color primary_pastelOrange = Color(0xffffb942);
