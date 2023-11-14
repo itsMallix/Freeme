@@ -18,8 +18,9 @@ class DotIndicator extends StatelessWidget {
               : ColorSystem.gradient_blindDark,
         ),
         child: Container(
-          height: isActive ? 15 : 12,
-          width: isActive ? 15 : 12,
+          alignment: Alignment.center,
+          height: isActive ? 13 : 10,
+          width: isActive ? 13 : 10,
         ),
       ),
     );

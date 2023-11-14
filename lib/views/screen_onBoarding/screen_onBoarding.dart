@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freeme/component/screen_onboarding/component_dots.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
@@ -31,21 +32,24 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
     OnBoarding(
       heading: "Selamat Datang di",
       title: "Freeme",
-      image: "",
+      image: "assets/images/screen_onBoarding/onboarding_1.svg",
+      content: "",
       subtitle:
           "Dapatkan pengalaman pengguna aplikasi yang menyenangkan dan mudah. Siapkan diri Anda untuk menjadi pemenang dalam melawan kecanduan PMO dengan Freeme!",
     ),
     OnBoarding(
       heading: "Kemajuan dalam Game",
       title: "Kemajuan dalam Hidup",
-      image: "",
+      image: "assets/images/screen_onBoarding/onboarding_2.svg",
+      content: "",
       subtitle:
           "Buka semua fitur dalam game dengan menyelesaikan challenge yang ada. Dapatkan karakter baru, peliharaan, atribut dan item lainnya sebagai hadia untuk mencapai perjuangan Anda!",
     ),
     OnBoarding(
       heading: "Kalahkan raksasa",
       title: "Kalahkan Kebiasaan PMO",
-      image: "",
+      image: "assets/images/screen_onBoarding/onboarding_3.svg",
+      content: "Mulai Sekarang!",
       subtitle:
           "Pertahankan tujuan Anda agar tetap pada jalurnya dengan bantuan dari teman komunitas. Beri dukungan satu sama lain untuk bertempur dan saling berbenah bersama!",
     ),
@@ -54,7 +58,7 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
   Color getScaffoldColor() {
     switch (_pageIndex) {
       case 0:
-        return ColorSystem.primary_electricIndigo;
+        return ColorSystem.secondary_grapePurple;
       case 1:
         return ColorSystem.secondary_cyanCornflower;
       case 2:
@@ -101,12 +105,14 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
                     title: onboardingData[index].title,
                     image: onboardingData[index].image,
                     subtitile: onboardingData[index].subtitle,
+                    content: onboardingData[index].content,
                   ),
                 ),
               ),
               Row(
                 children: [
                   const Spacer(),
+                  const SizedBox(width: 15),
                   ...List.generate(
                     onboardingData.length,
                     (index) => Padding(
@@ -117,6 +123,8 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
                   const Spacer(),
                 ],
               ),
+              // if (_pageIndex == onboardingData.length - 1)
+
               const SizedBox(height: 80),
             ],
           ),
@@ -131,6 +139,7 @@ class OnboardingContent extends StatelessWidget {
   final String title;
   final String image;
   final String subtitile;
+  final String content;
 
   const OnboardingContent({
     super.key,
@@ -138,6 +147,7 @@ class OnboardingContent extends StatelessWidget {
     required this.title,
     required this.image,
     required this.subtitile,
+    required this.content,
   });
 
   @override
@@ -160,9 +170,10 @@ class OnboardingContent extends StatelessWidget {
         ),
         const SizedBox(height: 30),
         Container(
+          padding: const EdgeInsets.all(24.0),
           height: 300,
           width: double.infinity,
-          color: ColorSystem.neutral_white,
+          child: SvgPicture.asset(image),
         ),
         const SizedBox(height: 30),
         Text(
@@ -172,6 +183,16 @@ class OnboardingContent extends StatelessWidget {
             color: ColorSystem.neutral_white,
           ),
         ),
+        const SizedBox(height: 20),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            content,
+            style: TypographySystem.subtitle1.copyWith(
+              color: ColorSystem.neutral_white,
+            ),
+          ),
+        )
       ],
     );
   }
