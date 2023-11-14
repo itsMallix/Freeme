@@ -4,6 +4,7 @@ import 'package:freeme/component/screen_onboarding/component_dots.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/model/model_onBoarding/model_onboarding.dart';
+import 'package:freeme/views/screen_authenticaation/screen_auth.dart';
 
 class ScreenOnBoarding extends StatefulWidget {
   const ScreenOnBoarding({super.key});
@@ -185,7 +186,14 @@ class OnboardingContent extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ScreenAuth(),
+              ),
+            );
+          },
           child: Text(
             content,
             style: TypographySystem.subtitle1.copyWith(
