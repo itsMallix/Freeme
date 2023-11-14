@@ -45,7 +45,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
               height: 30,
               child: Text(
                 "Alright Reserved By Freeme",
-                style: TypograhpySystem.caption
+                style: TypographySystem.caption
                     .copyWith(color: ColorSystem.neutral_metallicSilver),
               ),
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TypograhpySystem {
-  TypograhpySystem._();
+class TypographySystem {
+  TypographySystem._();
   static const TextStyle heading1 = TextStyle(
     fontFamily: 'CeraRoundPro',
     fontWeight: FontWeight.bold,
@@ -48,6 +48,13 @@ class TypograhpySystem {
     fontFamily: 'CeraRoundPro',
     fontWeight: FontWeight.w500,
     fontSize: 14,
+    letterSpacing: 0,
+    color: Colors.black,
+  );
+  static const TextStyle contentText = TextStyle(
+    fontFamily: 'CeraRoundPro',
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
     letterSpacing: 0,
     color: Colors.black,
   );
