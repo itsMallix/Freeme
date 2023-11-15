@@ -33,10 +33,11 @@ class _ScreenSplashState extends State<ScreenSplash> {
           const Spacer(),
           const SizedBox(height: 100),
           Center(
-            child: SizedBox(
-              height: 250,
-              width: 250,
-              child: SvgPicture.asset("assets/images/Freeme_logo.svg"),
+            child: Container(
+              padding: const EdgeInsets.all(8.0),
+              height: 200,
+              width: 200,
+              child: SvgPicture.asset("assets/images/logo_app.svg"),
             ),
           ),
           const Spacer(),
@@ -45,7 +46,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
               height: 30,
               child: Text(
                 "Alright Reserved By Freeme",
-                style: TypograhpySystem.caption
+                style: TypographySystem.caption
                     .copyWith(color: ColorSystem.neutral_metallicSilver),
               ),
             ),

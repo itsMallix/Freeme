@@ -6,6 +6,9 @@ class ColorSystem {
   static const Color primary_electricIndigo = Color(0xff7622ff);
   static const Color primary_pastelOrange = Color(0xffffb942);
 
+  static const Color secondary_cyanCornflower = Color(0xff2895CD);
+  static const Color secondary_grapePurple = Color(0xff6132B4);
+
   static const Color tertiary_erieBlack = Color(0xff1a181d);
   static const Color negative_fieryRose = Color(0xffff517b);
 
@@ -34,6 +37,12 @@ class ColorSystem {
     colors: [
       Color(0xffff60e6),
       Color(0xffff2264),
+    ],
+  );
+  static const LinearGradient gradient_blindDark = LinearGradient(
+    colors: [
+      Color(0xff281b41),
+      Color(0xff281b41),
     ],
   );
   static const RadialGradient gradient_voidPurple = RadialGradient(
