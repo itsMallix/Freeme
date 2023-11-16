@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
+import 'package:freeme/views/screen_diagnose/screen_diagnose_1.dart';
 
 class ScreenSignIn extends StatelessWidget {
   const ScreenSignIn({super.key});
@@ -125,7 +126,14 @@ class ScreenSignIn extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ScreenDiagnose1(),
+                            ),
+                          );
+                        },
                         child: Text(
                           "Sign In",
                           style: TypographySystem.subtitle2.copyWith(
