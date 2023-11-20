@@ -37,7 +37,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
               padding: const EdgeInsets.all(8.0),
               height: 200,
               width: 200,
-              child: SvgPicture.asset("assets/images/logo_app.svg"),
+              child: SvgPicture.asset("assets/images/logo_app_full.svg"),
             ),
           ),
           const Spacer(),

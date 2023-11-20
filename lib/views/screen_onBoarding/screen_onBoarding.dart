@@ -77,7 +77,14 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
         backgroundColor: getScaffoldColor(),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ScreenAuth(),
+                ),
+              );
+            },
             child: Text(
               "Skip",
               style: TypographySystem.subtitle3.copyWith(

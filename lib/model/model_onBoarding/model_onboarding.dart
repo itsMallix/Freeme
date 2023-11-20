@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class OnBoarding {
   final String heading;
   final String title;
