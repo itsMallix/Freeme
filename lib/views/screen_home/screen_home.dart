@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
+import 'package:freeme/component/screen_home/home_bannerObjective.dart';
+import 'package:freeme/component/screen_home/home_characterStats.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class ScreenHome extends StatelessWidget {
   const ScreenHome({super.key});
@@ -10,329 +13,209 @@ class ScreenHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorSystem.primary_darkPurple,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            SizedBox(
-              height: 110,
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              const CharacterStats(),
+              Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10, left: 10),
-                    child: SizedBox(
-                      height: 100,
-                      width: 100,
-                      child: SvgPicture.asset(
-                        "assets/images/character/char_1.svg",
-                      ),
+                  Text(
+                    "Level 1",
+                    style: TypographySystem.subtitle1.copyWith(
+                      color: ColorSystem.neutral_white,
                     ),
                   ),
                   const Spacer(),
-                  Column(
+                  const Icon(
+                    Icons.paid_rounded,
+                    color: ColorSystem.primary_pastelOrange,
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    "0",
+                    style: TypographySystem.subtitle1.copyWith(
+                      color: ColorSystem.primary_pastelOrange,
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(height: 10),
+              const BannerObjective(),
+              const SizedBox(height: 30),
+              CircularPercentIndicator(
+                backgroundColor: ColorSystem.neutral_white.withOpacity(0.2),
+                radius: 100,
+                animation: true,
+                animationDuration: 1200,
+                lineWidth: 25,
+                percent: 0.0,
+                center: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "0",
+                      style: TypographySystem.heading1.copyWith(
+                        fontSize: 50,
+                        color: ColorSystem.primary_pastelOrange,
+                      ),
+                    ),
+                    Text(
+                      "Hari",
+                      style: TypographySystem.subtitle3.copyWith(
+                        color: ColorSystem.neutral_white,
+                      ),
+                    )
+                  ],
+                ),
+                circularStrokeCap: CircularStrokeCap.round,
+                progressColor: ColorSystem.primary_pastelOrange,
+              ),
+              const SizedBox(height: 30),
+              Container(
+                height: 70,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadiusDirectional.circular(15.0),
+                  border: Border.all(
+                    color: ColorSystem.primary_electricIndigo.withOpacity(0.5),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.favorite_rounded,
-                            color: ColorSystem.negative_fieryRose,
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.05,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 10,
-                                width: MediaQuery.of(context).size.width * 0.45,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: ColorSystem.negative_fieryRose,
-                                ),
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "100/100",
-                                    style: TypographySystem.caption.copyWith(
-                                      color: ColorSystem.neutral_white,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.23,
-                                  ),
-                                  Text(
-                                    "Nyawa",
-                                    style: TypographySystem.caption.copyWith(
-                                      color: ColorSystem.neutral_white,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
+                      Text(
+                        "Sedang Berjalan",
+                        style: TypographySystem.subtitle1.copyWith(
+                          color: ColorSystem.primary_pastelOrange,
+                        ),
                       ),
-                      const SizedBox(height: 10),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const Icon(
-                            Icons.star_rounded,
-                            color: ColorSystem.primary_pastelOrange,
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.05,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 10,
-                                width: MediaQuery.of(context).size.width * 0.45,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.grey.shade100,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      width: 40,
-                                      height: 10,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(50),
-                                        color: ColorSystem.primary_pastelOrange,
-                                      ),
-                                    ),
-                                    Container()
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "20/100",
-                                    style: TypographySystem.caption.copyWith(
-                                      color: ColorSystem.neutral_white,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.24,
-                                  ),
-                                  Text(
-                                    "Exp",
-                                    textAlign: TextAlign.right,
-                                    style: TypographySystem.caption.copyWith(
-                                      color: ColorSystem.neutral_white,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const Icon(
-                            Icons.diamond_rounded,
-                            color: ColorSystem.secondary_cyanCornflower,
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.05,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 10,
-                                width: MediaQuery.of(context).size.width * 0.45,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.grey.shade100,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      width: 20,
-                                      height: 10,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(50),
-                                        color: ColorSystem
-                                            .secondary_cyanCornflower,
-                                      ),
-                                    ),
-                                    Container()
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "12",
-                                    style: TypographySystem.caption.copyWith(
-                                      color: ColorSystem.neutral_white,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.31,
-                                  ),
-                                  Text(
-                                    "Gem",
-                                    textAlign: TextAlign.right,
-                                    style: TypographySystem.caption.copyWith(
-                                      color: ColorSystem.neutral_white,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
+                      Text(
+                        "0 Hari 0 Jam 0 Menit 0 Detik",
+                        style: TypographySystem.subtitle3.copyWith(
+                          color: ColorSystem.neutral_white,
+                        ),
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
-            Row(
-              children: [
-                Text(
-                  "Level 1",
-                  style: TypographySystem.subtitle1.copyWith(
-                    color: ColorSystem.neutral_white,
-                  ),
-                ),
-                const Spacer(),
-                const Icon(
-                  Icons.paid_rounded,
-                  color: ColorSystem.primary_pastelOrange,
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  "0",
-                  style: TypographySystem.subtitle1.copyWith(
-                    color: ColorSystem.primary_pastelOrange,
-                  ),
-                )
-              ],
-            ),
-            const SizedBox(height: 10),
-            Container(
-              height: 80,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: const Color(0xff412871),
-                borderRadius: BorderRadius.circular(15.0),
-                border: Border.all(
-                  color: ColorSystem.primary_electricIndigo,
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const SizedBox(width: 5),
-                    SvgPicture.asset("assets/images/component/blink.svg"),
-                    const SizedBox(width: 10),
-                    Column(
+              const SizedBox(height: 15),
+              Container(
+                height: 50,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  gradient: ColorSystem.gradient_crayolaBlue,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shadowColor: Colors.transparent,
+                    backgroundColor: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    "Set Goals",
+                    style: TypographySystem.heading2.copyWith(
+                      color: ColorSystem.neutral_white,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.44,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: ColorSystem.primary_electricIndigo,
+                      ),
+                    ),
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: 20,
-                          width: 280,
-                          child: Row(
-                            children: [
-                              Text(
-                                "Misi Objektif",
-                                style: TypographySystem.subtitle1.copyWith(
-                                  color: ColorSystem.neutral_white,
-                                ),
-                              ),
-                              const Spacer(),
-                              Container(
-                                height: 20,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: ColorSystem.primary_darkPurple
-                                      .withOpacity(
-                                    0.5,
-                                  ),
-                                ),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.paid_rounded,
-                                      size: 15,
-                                      color: ColorSystem.primary_pastelOrange,
-                                    ),
-                                    const SizedBox(width: 3),
-                                    Text(
-                                      "100",
-                                      style: TypographySystem.caption.copyWith(
-                                          color: ColorSystem.neutral_white),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
+                        Text(
+                          "Streak Terbanyak",
+                          style: TypographySystem.subtitle2.copyWith(
+                            color: ColorSystem.primary_pastelOrange,
                           ),
                         ),
-                        const SizedBox(height: 10),
-                        SizedBox(
-                          height: 20,
-                          width: 280,
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 10,
-                                width: MediaQuery.of(context).size.width * 0.55,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: ColorSystem.neutral_white,
-                                ),
-                              ),
-                              const Spacer(),
-                              SizedBox(
-                                height: 20,
-                                width: 40,
-                                child: Text(
-                                  "0/5",
-                                  style: TypographySystem.subtitle2.copyWith(
-                                    color: ColorSystem.neutral_white,
-                                  ),
-                                ),
-                              )
-                            ],
+                        Text(
+                          "30 Hari 12 Jam",
+                          style: TypographySystem.subtitle3.copyWith(
+                            color: ColorSystem.neutral_white,
                           ),
                         ),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.44,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: ColorSystem.primary_electricIndigo,
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Relapse",
+                          style: TypographySystem.subtitle2.copyWith(
+                            color: ColorSystem.primary_pastelOrange,
+                          ),
+                        ),
+                        Text(
+                          "0 Kali",
+                          style: TypographySystem.subtitle3.copyWith(
+                            color: ColorSystem.neutral_white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            )
-          ],
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  Text(
+                    "Milestone Streak",
+                    style: TypographySystem.heading2
+                        .copyWith(color: ColorSystem.neutral_white),
+                  ),
+                  const Spacer(),
+                  Text(
+                    "Lihat Semua",
+                    style: TypographySystem.caption.copyWith(
+                      color: ColorSystem.primary_pastelOrange,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Container(
+                height: 150,
+                width: double.infinity,
+                color: ColorSystem.negative_fieryRose,
+              )
+            ],
+          ),
         ),
       ),
     );

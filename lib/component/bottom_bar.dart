@@ -88,9 +88,12 @@ class MainScreenState extends State<MainScreen> {
               shape: BoxShape.circle,
               gradient: ColorSystem.gradient_voidPurple,
             ),
-            child: const Icon(
-              Icons.android_rounded,
-              color: ColorSystem.neutral_white,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SvgPicture.asset(
+                "assets/images/component/fist.svg",
+                color: ColorSystem.neutral_white,
+              ),
             ),
           ),
         ),
@@ -120,7 +123,7 @@ class MainScreenState extends State<MainScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.view_list_rounded,
+                Icons.games_rounded,
                 color: _currentIndex == 1
                     ? ColorSystem.primary_pastelOrange
                     : ColorSystem.neutral_metallicSilver,
@@ -137,7 +140,7 @@ class MainScreenState extends State<MainScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.chat_bubble_rounded,
+                Icons.bubble_chart,
                 color: _currentIndex == 3
                     ? ColorSystem.primary_pastelOrange
                     : ColorSystem.neutral_metallicSilver,
