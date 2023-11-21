@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/screen_home/home_bannerObjective.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
 import 'package:freeme/component/theme/system_color.dart';
@@ -209,11 +210,60 @@ class ScreenHome extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              Container(
+              SizedBox(
                 height: 150,
                 width: double.infinity,
-                color: ColorSystem.negative_fieryRose,
-              )
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Container(
+                          height: 100,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8.0,
+                          ),
+                          child: Image.asset(
+                            "assets/images/component/badge/badge_1.png",
+                          ),
+                        ),
+                        Text(
+                          "Paragon",
+                          style: TypographySystem.subtitle3.copyWith(
+                            color: ColorSystem.neutral_white,
+                          ),
+                        ),
+                        Text(
+                          "n Hari Streak",
+                          style: TypographySystem.caption.copyWith(
+                            color: ColorSystem.neutral_white,
+                          ),
+                        )
+                      ],
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  Text(
+                    "Riwayat Perjalanan",
+                    style: TypographySystem.heading2.copyWith(
+                      color: ColorSystem.neutral_white,
+                    ),
+                  ),
+                  const Spacer(),
+                  Text(
+                    "Lihat Semua",
+                    style: TypographySystem.caption.copyWith(
+                      color: ColorSystem.primary_pastelOrange,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),

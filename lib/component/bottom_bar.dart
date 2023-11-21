@@ -79,6 +79,7 @@ class MainScreenState extends State<MainScreen> {
         height: 70,
         width: 70,
         child: FloatingActionButton(
+          elevation: 0,
           shape: const CircleBorder(),
           onPressed: () {},
           child: Container(
