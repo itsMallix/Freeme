@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/screen_home/home_bannerObjective.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
 import 'package:freeme/component/theme/system_color.dart';
