@@ -247,7 +247,7 @@ class ScreenHome extends StatelessWidget {
                     Column(
                       children: [
                         Container(
-                          width: double.infinity,
+                          width: 200,
                           height: 100,
                           color: ColorSystem.negative_fieryRose,
                         )
