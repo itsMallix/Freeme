@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freeme/component/screen_home/home_bannerObjective.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
+import 'package:freeme/component/screen_home/home_milestoneStreak.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -208,40 +209,10 @@ class ScreenHome extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              SizedBox(
+              const SizedBox(
                 height: 150,
                 width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        Container(
-                          height: 100,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8.0,
-                          ),
-                          child: Image.asset(
-                            "assets/images/component/badge/badge_1.png",
-                          ),
-                        ),
-                        Text(
-                          "Paragon",
-                          style: TypographySystem.subtitle3.copyWith(
-                            color: ColorSystem.neutral_white,
-                          ),
-                        ),
-                        Text(
-                          "n Hari Streak",
-                          style: TypographySystem.caption.copyWith(
-                            color: ColorSystem.neutral_white,
-                          ),
-                        )
-                      ],
-                    );
-                  },
-                ),
+                child: BuildMilestone(),
               ),
               const SizedBox(height: 20),
               Row(
@@ -262,6 +233,38 @@ class ScreenHome extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
+              Container(
+                height: 150,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  border: Border.all(
+                    color: ColorSystem.primary_electricIndigo,
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: 100,
+                          color: ColorSystem.negative_fieryRose,
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          width: 100,
+                          height: 100,
+                          color: ColorSystem.primary_pastelOrange,
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
