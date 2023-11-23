@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freeme/component/screen_home/home_bannerObjective.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
+import 'package:freeme/component/screen_home/home_historyPath.dart';
 import 'package:freeme/component/screen_home/home_milestoneStreak.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
@@ -233,38 +234,8 @@ class ScreenHome extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              Container(
-                height: 150,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  border: Border.all(
-                    color: ColorSystem.primary_electricIndigo,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          width: 200,
-                          height: 100,
-                          color: ColorSystem.negative_fieryRose,
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          width: 100,
-                          height: 100,
-                          color: ColorSystem.primary_pastelOrange,
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              const BuildHistory(),
+              const SizedBox(height: 30),
             ],
           ),
         ),
