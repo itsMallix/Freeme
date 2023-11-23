@@ -8,6 +8,7 @@ class ColorSystem {
 
   static const Color secondary_cyanCornflower = Color(0xff2895CD);
   static const Color secondary_grapePurple = Color(0xff6132B4);
+  static const Color secondary_ufoGreen = Color(0xff3CDE6A);
 
   static const Color tertiary_erieBlack = Color(0xff1a181d);
   static const Color negative_fieryRose = Color(0xffff517b);

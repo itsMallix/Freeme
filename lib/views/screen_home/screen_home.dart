@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:freeme/component/screen_home/home_bannerObjective.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
+import 'package:freeme/component/screen_home/home_historyPath.dart';
+import 'package:freeme/component/screen_home/home_milestoneStreak.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -209,11 +210,32 @@ class ScreenHome extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              Container(
+              const SizedBox(
                 height: 150,
                 width: double.infinity,
-                color: ColorSystem.negative_fieryRose,
-              )
+                child: BuildMilestone(),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  Text(
+                    "Riwayat Perjalanan",
+                    style: TypographySystem.heading2.copyWith(
+                      color: ColorSystem.neutral_white,
+                    ),
+                  ),
+                  const Spacer(),
+                  Text(
+                    "Lihat Semua",
+                    style: TypographySystem.caption.copyWith(
+                      color: ColorSystem.primary_pastelOrange,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const BuildHistory(),
+              const SizedBox(height: 30),
             ],
           ),
         ),
