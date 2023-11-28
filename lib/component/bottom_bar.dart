@@ -81,7 +81,14 @@ class MainScreenState extends State<MainScreen> {
         child: FloatingActionButton(
           elevation: 0,
           shape: const CircleBorder(),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ScreenClansMain(),
+              ),
+            );
+          },
           child: Container(
             width: 80,
             height: 80,

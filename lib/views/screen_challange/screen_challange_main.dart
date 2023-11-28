@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freeme/component/screen_challenge/challenge_habitsCard.dart';
+import 'package:freeme/component/screen_challenge/challenge_routineCard.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
@@ -78,9 +79,7 @@ class _ScreenChallangeMainState extends State<ScreenChallangeMain>
                     // item tab habits
                     BuildHabitsChallenge(),
                     // item tab rutinitas
-                    Center(
-                      child: Text('Tab 2 Content'),
-                    ),
+                    BuildRoutineChallenge(),
                   ],
                 ),
               ),

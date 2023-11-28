@@ -22,13 +22,14 @@ class ScreenChallangeHabits extends StatelessWidget {
         ),
         actions: [
           TextButton(
-              onPressed: () {},
-              child: Text(
-                "Simpan",
-                style: TypographySystem.subtitle3.copyWith(
-                  color: ColorSystem.primary_pastelOrange,
-                ),
-              ))
+            onPressed: () {},
+            child: Text(
+              "Simpan",
+              style: TypographySystem.subtitle3.copyWith(
+                color: ColorSystem.primary_pastelOrange,
+              ),
+            ),
+          )
         ],
       ),
       body: SingleChildScrollView(
