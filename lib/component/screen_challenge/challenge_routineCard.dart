@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
+import 'package:freeme/model/model_challenge/model_routine.dart';
 
 class BuildRoutineChallenge extends StatelessWidget {
   const BuildRoutineChallenge({
@@ -9,11 +10,50 @@ class BuildRoutineChallenge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        const SizedBox(height: 20),
-        Container(
+    List<RoutineData> routineData = [
+      RoutineData(
+        title: "Workout Di Teras Kost",
+        description:
+            "Mencoba olahraga di terast kost karena masih malu kalau di luar, karena sering pmo dan ini adalah langkah pertama ku",
+        start: "1",
+        finish: "5",
+      ),
+      RoutineData(
+        title: "Main Game Tidak Toxic",
+        description:
+            "Bermain game secukupnya, tidak toxic dan jangan lupa komitmen yang sudah ku buat dengan diriku sendiri 2 hari yang lalu",
+        start: "1",
+        finish: "5",
+      ),
+      RoutineData(
+        title: "Sholat Berjamaah Di Masjid",
+        description:
+            "Sholat berjamaah untuk mendekatkan diri dengan tuhan dan orang-orang shaleh agar bisa didoakan menjadi yang lebih baik",
+        start: "1",
+        finish: "5",
+      ),
+      RoutineData(
+        title: "Mandi 3 Kali Sehari",
+        description:
+            "Jangan malah mandi, karena kebersihan diri itu penting dan cara untuk menghindari penyakit kecanduan PMO",
+        start: "1",
+        finish: "5",
+      ),
+      RoutineData(
+        title: "Mengatur Pola Makan",
+        description:
+            "Mencoba mengatur pola makan sehat, utamakan nasi, kurangi gula dan garam, kalau bisa puasa sunnah agar lambung sehat",
+        start: "1",
+        finish: "5",
+      ),
+    ];
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(vertical: 15.0),
+      itemCount: routineData.length,
+      itemBuilder: (context, index) {
+        return Container(
           height: 130,
+          margin: const EdgeInsets.symmetric(vertical: 5.0),
           width: double.infinity,
           decoration: BoxDecoration(
             border: Border.all(
@@ -60,7 +100,7 @@ class BuildRoutineChallenge extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Berolahraga Secara Teratur",
+                      routineData[index].title,
                       style: TypographySystem.subtitle2.copyWith(
                         color: ColorSystem.neutral_white,
                       ),
@@ -69,7 +109,7 @@ class BuildRoutineChallenge extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2,
                       child: Text(
-                        "Frustasi banget gara-gara jadwal kuliah tiada habisnya bikin ga sempat olahraga. tapi aku coba olahraga akhir pekan ini",
+                        routineData[index].description,
                         style: TypographySystem.caption.copyWith(
                           color: ColorSystem.neutral_white,
                         ),
@@ -81,7 +121,9 @@ class BuildRoutineChallenge extends StatelessWidget {
               Container(
                 width: 60,
                 padding: const EdgeInsets.symmetric(
-                    vertical: 30.0, horizontal: 14.0),
+                  vertical: 30.0,
+                  horizontal: 14.0,
+                ),
                 height: double.infinity,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.horizontal(
@@ -103,7 +145,7 @@ class BuildRoutineChallenge extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "1",
+                        routineData[index].start,
                         style: TypographySystem.subtitle1.copyWith(
                           color: ColorSystem.neutral_white,
                         ),
@@ -117,7 +159,7 @@ class BuildRoutineChallenge extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "5",
+                        routineData[index].finish,
                         style: TypographySystem.subtitle1.copyWith(
                           color: ColorSystem.neutral_white,
                         ),
@@ -128,8 +170,8 @@ class BuildRoutineChallenge extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ],
+        );
+      },
     );
   }
 }

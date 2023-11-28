@@ -4,34 +4,6 @@ import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/model/model_challenge/model_habits.dart';
 
-List<HabitsData> habitsData = [
-  HabitsData(
-    title: "Olahraga Teratur",
-    description:
-        "Frustasi banget gara-gara jadwal kuliah tiada habisnya bikin ga sempat olahraga. tapi aku coba olahraga akhir pekan ini",
-  ),
-  HabitsData(
-    title: "Scroll Tiktok",
-    description:
-        "Kurangi scroll tiktok karena di tiktok banyak konten yang bikin sagne, dan aku sudah bertekan untuk tidak relapse",
-  ),
-  HabitsData(
-    title: "Tidur Tepat Waktu",
-    description:
-        "Salah satu pemicu untuk pmo adalah rasa sendiri seperti malam hari, maka akan ku kurangi begadang",
-  ),
-  HabitsData(
-    title: "Baca 1 Buku",
-    description:
-        "Baca 1 buku dengan judul bebas untuk membentuk habits baru yang lebih bermanfaat dan menyehatkan diri sendiri",
-  ),
-  HabitsData(
-    title: "Lakukan Journaling",
-    description:
-        "Catat segala hal yang sudah ku lalui selama satu hari ini guna tracking habits ku terbangun atau tidak",
-  ),
-];
-
 class BuildHabitsChallenge extends StatelessWidget {
   const BuildHabitsChallenge({
     super.key,
@@ -39,6 +11,33 @@ class BuildHabitsChallenge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<HabitsData> habitsData = [
+      HabitsData(
+        title: "Olahraga Teratur",
+        description:
+            "Frustasi banget gara-gara jadwal kuliah tiada habisnya bikin ga sempat olahraga. tapi aku coba olahraga akhir pekan ini",
+      ),
+      HabitsData(
+        title: "Scroll Tiktok",
+        description:
+            "Kurangi scroll tiktok karena di tiktok banyak konten yang bikin sagne, dan aku sudah bertekan untuk tidak relapse",
+      ),
+      HabitsData(
+        title: "Tidur Tepat Waktu",
+        description:
+            "Salah satu pemicu untuk pmo adalah rasa sendiri seperti malam hari, maka akan ku kurangi begadang",
+      ),
+      HabitsData(
+        title: "Baca 1 Buku",
+        description:
+            "Baca 1 buku dengan judul bebas untuk membentuk habits baru yang lebih bermanfaat dan menyehatkan diri sendiri",
+      ),
+      HabitsData(
+        title: "Lakukan Journaling",
+        description:
+            "Catat segala hal yang sudah ku lalui selama satu hari ini guna tracking habits ku terbangun atau tidak",
+      ),
+    ];
     return ListView.builder(
       padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
       itemCount: habitsData.length,
