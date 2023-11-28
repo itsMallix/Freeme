@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:freeme/component/screen_challenge/challenge_habitsCard.dart';
+import 'package:freeme/component/screen_challenge/challenge_routineCard.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
+import 'package:freeme/views/screen_challange/screen_challange_habits.dart';
+import 'package:freeme/views/screen_challange/screen_challange_routine.dart';
 
-class ScreenChallangeMain extends StatelessWidget {
+class ScreenChallangeMain extends StatefulWidget {
   const ScreenChallangeMain({Key? key}) : super(key: key);
+
+  @override
+  _ScreenChallangeMainState createState() => _ScreenChallangeMainState();
+}
+
+class _ScreenChallangeMainState extends State<ScreenChallangeMain>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +59,7 @@ class ScreenChallangeMain extends StatelessWidget {
                 ],
               ),
               TabBar(
+                controller: _tabController,
                 labelStyle: TypographySystem.subtitle2,
                 labelColor: ColorSystem.primary_pastelOrange,
                 indicatorColor: ColorSystem.primary_pastelOrange,
@@ -53,24 +72,54 @@ class ScreenChallangeMain extends StatelessWidget {
                   Tab(text: 'Rutinitas'),
                 ],
               ),
-              const Expanded(
+              Expanded(
                 child: TabBarView(
-                  children: [
-                    // Content for Tab
-                    Center(
-                      child: Text('Tab 1 Content'),
-                    ),
-                    // Content for Tab 2
-                    Center(
-                      child: Text('Tab 2 Content'),
-                    ),
+                  controller: _tabController,
+                  children: const [
+                    // item tab habits
+                    BuildHabitsChallenge(),
+                    // item tab rutinitas
+                    BuildRoutineChallenge(),
                   ],
                 ),
               ),
             ],
           ),
         ),
+        floatingActionButton: _buildFloatingActionButton(),
       ),
     );
+  }
+
+  Widget _buildFloatingActionButton() {
+    return FloatingActionButton(
+      heroTag: 'challenge',
+      onPressed: () {
+        if (_tabController.index == 0) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ScreenChallangeHabits(),
+            ),
+          );
+        }
+        if (_tabController.index == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ScreenChallangeRoutine(),
+            ),
+          );
+        }
+      },
+      backgroundColor: ColorSystem.primary_pastelOrange,
+      child: const Icon(Icons.add),
+    );
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 }
