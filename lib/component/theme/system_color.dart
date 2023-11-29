@@ -13,6 +13,8 @@ class ColorSystem {
   static const Color secondary_aztecGold = Color(0xffBE8E46);
 
   static const Color tertiary_erieBlack = Color(0xff1a181d);
+  static const Color tertiary_paleViolet = Color(0xffBCA8FF);
+  static const Color tertiary_gunMetal = Color(0xff30283F);
   static const Color negative_fieryRose = Color(0xffff517b);
 
   static const Color neutral_white = Color(0xffffffff);
