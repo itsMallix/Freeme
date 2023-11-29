@@ -35,7 +35,7 @@ class BuildRoutineChallenge extends StatelessWidget {
       RoutineData(
         title: "Mandi 3 Kali Sehari",
         description:
-            "Jangan malah mandi, karena kebersihan diri itu penting dan cara untuk menghindari penyakit kecanduan PMO",
+            "Jangan malas mandi, karena kebersihan diri itu penting dan cara untuk menghindari penyakit kecanduan PMO",
         start: "1",
         finish: "5",
       ),
