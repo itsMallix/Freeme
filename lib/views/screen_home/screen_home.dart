@@ -5,6 +5,7 @@ import 'package:freeme/component/screen_home/home_historyPath.dart';
 import 'package:freeme/component/screen_home/home_milestoneStreak.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
+import 'package:freeme/views/screen_home/screen_home_objective.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class ScreenHome extends StatelessWidget {
@@ -44,7 +45,16 @@ class ScreenHome extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              const BannerObjective(),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MissionObjective(),
+                      ),
+                    );
+                  },
+                  child: const BannerObjective()),
               const SizedBox(height: 30),
               CircularPercentIndicator(
                 backgroundColor: ColorSystem.neutral_white.withOpacity(0.2),
