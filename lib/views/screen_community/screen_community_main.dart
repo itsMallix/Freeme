@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:freeme/component/comunity_trending.dart/community_tersimpan.dart';
-import 'package:freeme/component/comunity_trending.dart/community_trending.dart';
-import 'package:freeme/component/screen_community/community_terbary.dart';
+import 'package:freeme/component/screen_community/community_terbaru.dart';
+import 'package:freeme/component/screen_community/community_tersimpan.dart';
+import 'package:freeme/component/screen_community/community_trending.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 
