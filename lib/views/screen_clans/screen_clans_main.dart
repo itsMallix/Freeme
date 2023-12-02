@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/views/screen_clans/screen_clans_join.dart';
@@ -13,12 +14,43 @@ class ScreenClansMain extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 230,
               width: double.infinity,
-              color: ColorSystem.neutral_white,
+              child: Stack(
+                children: [
+                  SizedBox(
+                    height: 230,
+                    width: double.infinity,
+                    child: Image.asset(
+                      "assets/images/screen_clans/clans_bg_main.png",
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.transparent,
+                          ColorSystem.primary_darkPurple
+                        ],
+                        stops: [0, .9],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: SvgPicture.asset(
+                          "assets/images/screen_clans/clans_char.svg"),
+                    ),
+                  )
+                ],
+              ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             SizedBox(
               width: 250,
               child: Text(

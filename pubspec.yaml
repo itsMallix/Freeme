@@ -67,6 +67,7 @@ flutter:
     - assets/images/character/
     - assets/images/component/
     - assets/images/component/badge/
+    - assets/images/screen_clans/
   fonts:
     - family: CeraRoundPro
       fonts:
