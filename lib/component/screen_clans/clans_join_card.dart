@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/model/model_clans/model_clans_join.dart';
+import 'package:freeme/views/screen_clans/screen_clans_details.dart';
 
 class ClansJoinCard extends StatelessWidget {
   const ClansJoinCard({super.key});
@@ -109,49 +110,61 @@ class ClansJoinCard extends StatelessWidget {
       itemCount: clanList.length,
       scrollDirection: Axis.vertical,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
-          child: Container(
-            height: 170,
-            width: double.infinity,
-            padding: const EdgeInsets.all(12.0),
-            decoration: BoxDecoration(
-              color: ColorSystem.tertiary_erieBlack,
-              borderRadius: BorderRadius.circular(16.0),
-            ),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    clanList[index].sign,
-                    const SizedBox(width: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          clanList[index].title,
-                          style: TypographySystem.subtitle1.copyWith(
-                            color: ColorSystem.neutral_white,
-                          ),
-                        ),
-                        Text(
-                          clanList[index].space,
-                          style: TypographySystem.bodyText2.copyWith(
-                            color: ColorSystem.neutral_metallicSilver,
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ScreenClansDetail(
+                  clanList: clanList[index],
                 ),
-                const SizedBox(height: 10),
-                Text(
-                  clanList[index].description,
-                  style: TypographySystem.caption.copyWith(
-                    color: ColorSystem.neutral_white,
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 10.0),
+            child: Container(
+              height: 170,
+              width: double.infinity,
+              padding: const EdgeInsets.all(12.0),
+              decoration: BoxDecoration(
+                color: ColorSystem.tertiary_erieBlack,
+                borderRadius: BorderRadius.circular(16.0),
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      clanList[index].sign,
+                      const SizedBox(width: 10),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            clanList[index].title,
+                            style: TypographySystem.subtitle1.copyWith(
+                              color: ColorSystem.neutral_white,
+                            ),
+                          ),
+                          Text(
+                            clanList[index].space,
+                            style: TypographySystem.bodyText2.copyWith(
+                              color: ColorSystem.neutral_metallicSilver,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                  const SizedBox(height: 10),
+                  Text(
+                    clanList[index].description,
+                    style: TypographySystem.caption.copyWith(
+                      color: ColorSystem.neutral_white,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
