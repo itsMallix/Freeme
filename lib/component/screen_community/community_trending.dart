@@ -11,16 +11,19 @@ class CommunityTrending extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsetsDirectional.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: 100,
-                child: Row(
+          child: SizedBox(
+            height: 150,
+            width: double.infinity,
+            child: ListView(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              scrollDirection: Axis.vertical,
+              children: [
+                Row(
                   children: [],
                 ),
-              )
-            ],
+              ],
+            ),
           ),
         ),
       ),
