@@ -20,7 +20,9 @@ class CommunityTrending extends StatelessWidget {
               scrollDirection: Axis.vertical,
               children: [
                 Row(
-                  children: [],
+                  children: [
+                    Container(),
+                  ],
                 ),
               ],
             ),
