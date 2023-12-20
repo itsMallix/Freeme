@@ -1,16 +1,3 @@
 # freeme
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Community and Gamification App sebagai Solusi Efektif untuk Mengatasi Adiksi Pornografi, Masturbasi, dan Orgasme (PMO)
+![freeme](https://github.com/itsMallix/Freeme/assets/85415488/b5186286-d1ce-4d74-857d-111d35937198)
