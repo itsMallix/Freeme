@@ -8,7 +8,7 @@ class CommunityTrendigCard {
   String content;
   String likes;
   String comment;
-  String share;
+  String save;
 
   CommunityTrendigCard({
     required this.profile,
@@ -18,6 +18,6 @@ class CommunityTrendigCard {
     required this.content,
     required this.likes,
     required this.comment,
-    required this.share,
+    required this.save,
   });
 }

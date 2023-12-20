@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
@@ -13,7 +11,7 @@ class CommunityTrending extends StatelessWidget {
     List<CommunityTrendigCard> cards = [
       CommunityTrendigCard(
         profile: const CircleAvatar(
-          backgroundColor: ColorSystem.negative_fieryRose,
+          backgroundColor: ColorSystem.neutral_white,
         ),
         badge: const Image(
           image: AssetImage("assets/images/component/badge/badge_1.png"),
@@ -24,16 +22,31 @@ class CommunityTrending extends StatelessWidget {
             "Pada titik ini, seseorang menyadari keinginannya untuk berhenti dari kebiasaan PMO (pornografi, masturbasi, dan onani). Dengan tekad yang kuat dan kesadaran akan dampak negatifnya terhadap kesejahteraan mental dan emosional, individu ini memilih untuk mengambil langkah-langkah positif menuju pemulihan dan pertumbuhan pribadi. Melalui komitmen untuk meninggalkan kebiasaan tersebut, orang ini bertujuan untuk menciptakan kehidupan yang lebih seimbang, sehat, dan berarti.",
         likes: "56",
         comment: "12",
-        share: "20",
+        save: "20",
+      ),
+      CommunityTrendigCard(
+        profile: const CircleAvatar(
+          backgroundColor: ColorSystem.neutral_white,
+        ),
+        badge: const Image(
+          image: AssetImage("assets/images/component/badge/badge_1.png"),
+        ),
+        name: "Jhon Doe",
+        timestamp: "1 Jam yang lalu",
+        content:
+            "Pada titik ini, seseorang menyadari keinginannya untuk berhenti dari kebiasaan PMO (pornografi, masturbasi, dan onani). Dengan tekad yang kuat dan kesadaran akan dampak negatifnya terhadap kesejahteraan mental dan emosional, individu ini memilih untuk mengambil langkah-langkah positif menuju pemulihan dan pertumbuhan pribadi. Melalui komitmen untuk meninggalkan kebiasaan tersebut, orang ini bertujuan untuk menciptakan kehidupan yang lebih seimbang, sehat, dan berarti.",
+        likes: "56",
+        comment: "12",
+        save: "20",
       ),
     ];
     return Scaffold(
       backgroundColor: ColorSystem.primary_darkPurple,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 12.0),
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 4.0),
           child: SizedBox(
-            height: 130,
+            height: 150,
             width: double.infinity,
             child: ListView.builder(
               itemCount: cards.length,
@@ -85,14 +98,57 @@ class CommunityTrending extends StatelessWidget {
                             ),
                             maxLines: 3,
                             textAlign: TextAlign.left,
-                          )
+                          ),
+                          const SizedBox(height: 5),
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.favorite_rounded,
+                                color: ColorSystem.negative_fieryRose,
+                              ),
+                              const SizedBox(width: 5),
+                              Text(
+                                cards[index].likes,
+                                style: TypographySystem.subtitle3.copyWith(
+                                  color: ColorSystem.neutral_metallicSilver,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                              const SizedBox(width: 25),
+                              const Icon(
+                                Icons.mode_comment_outlined,
+                                color: ColorSystem.primary_electricIndigo,
+                              ),
+                              const SizedBox(width: 5),
+                              Text(
+                                cards[index].comment,
+                                style: TypographySystem.subtitle3.copyWith(
+                                  color: ColorSystem.neutral_metallicSilver,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                              const SizedBox(width: 25),
+                              const Icon(
+                                Icons.bookmark,
+                                color: ColorSystem.primary_pastelOrange,
+                              ),
+                              const SizedBox(width: 5),
+                              Text(
+                                cards[index].save,
+                                style: TypographySystem.subtitle3.copyWith(
+                                  color: ColorSystem.neutral_metallicSilver,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
                     const Spacer(),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
+                    GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
                         Icons.more_vert_rounded,
                         color: ColorSystem.neutral_white,
                       ),
