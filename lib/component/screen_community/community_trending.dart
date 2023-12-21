@@ -39,6 +39,66 @@ class CommunityTrending extends StatelessWidget {
         comment: "12",
         save: "20",
       ),
+      CommunityTrendigCard(
+        profile: const CircleAvatar(
+          backgroundColor: ColorSystem.neutral_white,
+        ),
+        badge: const Image(
+          image: AssetImage("assets/images/component/badge/badge_1.png"),
+        ),
+        name: "Jhon Doe",
+        timestamp: "1 Jam yang lalu",
+        content:
+            "Pada titik ini, seseorang menyadari keinginannya untuk berhenti dari kebiasaan PMO (pornografi, masturbasi, dan onani). Dengan tekad yang kuat dan kesadaran akan dampak negatifnya terhadap kesejahteraan mental dan emosional, individu ini memilih untuk mengambil langkah-langkah positif menuju pemulihan dan pertumbuhan pribadi. Melalui komitmen untuk meninggalkan kebiasaan tersebut, orang ini bertujuan untuk menciptakan kehidupan yang lebih seimbang, sehat, dan berarti.",
+        likes: "56",
+        comment: "12",
+        save: "20",
+      ),
+      CommunityTrendigCard(
+        profile: const CircleAvatar(
+          backgroundColor: ColorSystem.neutral_white,
+        ),
+        badge: const Image(
+          image: AssetImage("assets/images/component/badge/badge_1.png"),
+        ),
+        name: "Jhon Doe",
+        timestamp: "1 Jam yang lalu",
+        content:
+            "Pada titik ini, seseorang menyadari keinginannya untuk berhenti dari kebiasaan PMO (pornografi, masturbasi, dan onani). Dengan tekad yang kuat dan kesadaran akan dampak negatifnya terhadap kesejahteraan mental dan emosional, individu ini memilih untuk mengambil langkah-langkah positif menuju pemulihan dan pertumbuhan pribadi. Melalui komitmen untuk meninggalkan kebiasaan tersebut, orang ini bertujuan untuk menciptakan kehidupan yang lebih seimbang, sehat, dan berarti.",
+        likes: "56",
+        comment: "12",
+        save: "20",
+      ),
+      CommunityTrendigCard(
+        profile: const CircleAvatar(
+          backgroundColor: ColorSystem.neutral_white,
+        ),
+        badge: const Image(
+          image: AssetImage("assets/images/component/badge/badge_1.png"),
+        ),
+        name: "Jhon Doe",
+        timestamp: "1 Jam yang lalu",
+        content:
+            "Pada titik ini, seseorang menyadari keinginannya untuk berhenti dari kebiasaan PMO (pornografi, masturbasi, dan onani). Dengan tekad yang kuat dan kesadaran akan dampak negatifnya terhadap kesejahteraan mental dan emosional, individu ini memilih untuk mengambil langkah-langkah positif menuju pemulihan dan pertumbuhan pribadi. Melalui komitmen untuk meninggalkan kebiasaan tersebut, orang ini bertujuan untuk menciptakan kehidupan yang lebih seimbang, sehat, dan berarti.",
+        likes: "56",
+        comment: "12",
+        save: "20",
+      ),
+      CommunityTrendigCard(
+        profile: const CircleAvatar(
+          backgroundColor: ColorSystem.neutral_white,
+        ),
+        badge: const Image(
+          image: AssetImage("assets/images/component/badge/badge_1.png"),
+        ),
+        name: "Jhon Doe",
+        timestamp: "1 Jam yang lalu",
+        content:
+            "Pada titik ini, seseorang menyadari keinginannya untuk berhenti dari kebiasaan PMO (pornografi, masturbasi, dan onani). Dengan tekad yang kuat dan kesadaran akan dampak negatifnya terhadap kesejahteraan mental dan emosional, individu ini memilih untuk mengambil langkah-langkah positif menuju pemulihan dan pertumbuhan pribadi. Melalui komitmen untuk meninggalkan kebiasaan tersebut, orang ini bertujuan untuk menciptakan kehidupan yang lebih seimbang, sehat, dan berarti.",
+        likes: "56",
+        comment: "12",
+        save: "20",
+      ),
     ];
     return Scaffold(
       backgroundColor: ColorSystem.primary_darkPurple,
