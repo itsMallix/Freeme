@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freeme/component/theme/system_color.dart';
-import 'package:freeme/model/model_community/model_community_card.dart';
+import 'package:freeme/model/model_community/model_trending_card.dart';
 
 class ScreenCommunityTrending extends StatelessWidget {
   const ScreenCommunityTrending({super.key});
