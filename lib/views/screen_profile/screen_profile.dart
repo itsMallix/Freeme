@@ -75,7 +75,38 @@ class ScreenProfile extends StatelessWidget {
                     ],
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: Row(
+                  children: [
+                    Container(
+                      height: 70,
+                      width: MediaQuery.of(context).size.width / 2.25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12.0),
+                        border: Border.all(
+                          color: ColorSystem.primary_electricIndigo,
+                        ),
+                      ),
+                      child: Column(
+                        children: [],
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      height: 70,
+                      width: MediaQuery.of(context).size.width / 2.25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12.0),
+                        border: Border.all(
+                          color: ColorSystem.primary_electricIndigo,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
