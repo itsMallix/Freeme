@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/views/screen_diagnose/screen_diagnose_4.dart';
+import 'package:get/get.dart';
 
 class ScreenDiagnose3 extends StatelessWidget {
   const ScreenDiagnose3({super.key});
@@ -14,7 +15,7 @@ class ScreenDiagnose3 extends StatelessWidget {
         backgroundColor: ColorSystem.primary_darkPurple,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Get.back();
           },
           icon: const Icon(
             Icons.arrow_back,
@@ -118,12 +119,7 @@ class ScreenDiagnose3 extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: ColorSystem.primary_pastelOrange,
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const ScreenDiagnose4(),
-            ),
-          );
+          Get.to(const ScreenDiagnose4());
         },
         child: const Icon(
           Icons.navigate_next_rounded,

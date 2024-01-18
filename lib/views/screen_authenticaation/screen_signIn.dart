@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/views/screen_diagnose/screen_diagnose_1.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class ScreenSignIn extends StatelessWidget {
   const ScreenSignIn({super.key});
@@ -14,7 +16,8 @@ class ScreenSignIn extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            // Navigator.pop(context);
+            Get.back();
           },
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
@@ -127,12 +130,7 @@ class ScreenSignIn extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ScreenDiagnose1(),
-                            ),
-                          );
+                          Get.offAll(const ScreenDiagnose1());
                         },
                         child: Text(
                           "Sign In",

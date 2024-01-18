@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
+import 'package:freeme/views/screen_diagnose/screen_diagnose_1.dart';
+import 'package:get/get.dart';
 
 class ScreenSignUp extends StatelessWidget {
   const ScreenSignUp({super.key});
@@ -13,7 +15,7 @@ class ScreenSignUp extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Get.back();
           },
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
@@ -146,7 +148,9 @@ class ScreenSignUp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.offAll(const ScreenDiagnose1());
+                        },
                         child: Text(
                           "Sign Up",
                           style: TypographySystem.subtitle2.copyWith(
