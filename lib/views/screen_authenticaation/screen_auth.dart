@@ -6,6 +6,7 @@ import 'dart:math' as math;
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/views/screen_authenticaation/screen_signIn.dart';
 import 'package:freeme/views/screen_authenticaation/screen_signUp.dart';
+import 'package:get/get.dart';
 
 class ScreenAuth extends StatelessWidget {
   const ScreenAuth({super.key});
@@ -25,12 +26,7 @@ class ScreenAuth extends StatelessWidget {
             const SizedBox(height: 50),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ScreenSignIn(),
-                  ),
-                );
+                Get.to(const ScreenSignIn());
               },
               child: Transform(
                 alignment: Alignment.center,
@@ -71,12 +67,7 @@ class ScreenAuth extends StatelessWidget {
             const SizedBox(height: 100),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ScreenSignUp(),
-                  ),
-                );
+                Get.to(() => const ScreenSignUp());
               },
               child: Transform(
                 alignment: Alignment.center,

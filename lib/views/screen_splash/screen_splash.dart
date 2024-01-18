@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/views/screen_onBoarding/screen_onBoarding.dart';
+import 'package:get/get.dart';
 
 class ScreenSplash extends StatefulWidget {
   const ScreenSplash({super.key});
@@ -15,10 +16,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds: 2000), () {
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => ScreenOnBoarding()),
-          (route) => false);
+      Get.offAll(() => const ScreenOnBoarding());
     });
   }
 
