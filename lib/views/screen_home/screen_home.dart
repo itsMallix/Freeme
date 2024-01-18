@@ -47,12 +47,7 @@ class ScreenHome extends StatelessWidget {
               const SizedBox(height: 10),
               GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MissionObjective(),
-                      ),
-                    );
+                    Get.to(const MissionObjective());
                   },
                   child: const BannerObjective()),
               const SizedBox(height: 30),
