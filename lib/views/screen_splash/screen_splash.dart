@@ -15,6 +15,7 @@ class ScreenSplash extends StatefulWidget {
 class _ScreenSplashState extends State<ScreenSplash> {
   @override
   void initState() {
+    super.initState();
     Future.delayed(const Duration(milliseconds: 2000), () {
       Get.offAll(() => const ScreenOnBoarding());
     });
