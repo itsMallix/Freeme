@@ -7,6 +7,7 @@ import 'package:freeme/views/screen_clans/screen_clans_main.dart';
 import 'package:freeme/views/screen_community/screen_community_main.dart';
 import 'package:freeme/views/screen_home/screen_home.dart';
 import 'package:freeme/views/screen_profile/screen_profile.dart';
+import 'package:get/get.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -75,19 +76,14 @@ class MainScreenState extends State<MainScreen> {
           );
         },
       ),
-      floatingActionButton: Container(
+      floatingActionButton: SizedBox(
         height: 70,
         width: 70,
         child: FloatingActionButton(
           elevation: 0,
           shape: const CircleBorder(),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ScreenClansMain(),
-              ),
-            );
+            Get.to(const ScreenClansMain());
           },
           child: Container(
             width: 80,
