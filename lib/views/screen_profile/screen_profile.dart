@@ -89,7 +89,7 @@ class ScreenProfile extends StatelessWidget {
                           color: ColorSystem.primary_electricIndigo,
                         ),
                       ),
-                      child: Column(
+                      child: const Column(
                         children: [Text("Test")],
                       ),
                     ),

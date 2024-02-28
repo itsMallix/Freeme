@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:freeme/component/theme/system_color.dart';
-import 'package:freeme/model/model_community/model_trending_card.dart';
 
 class ScreenCommunityTrending extends StatelessWidget {
   const ScreenCommunityTrending({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         // body: ListView.builder(
         //   scrollDirection: Axis.vertical,
         //   itemCount: cards.length,
