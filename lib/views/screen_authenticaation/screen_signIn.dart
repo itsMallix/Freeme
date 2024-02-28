@@ -4,7 +4,6 @@ import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/views/screen_diagnose/screen_diagnose_1.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class ScreenSignIn extends StatelessWidget {
   const ScreenSignIn({super.key});

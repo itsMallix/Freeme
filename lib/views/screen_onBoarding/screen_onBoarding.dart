@@ -6,7 +6,6 @@ import 'package:freeme/component/theme/system_typography.dart';
 import 'package:freeme/model/model_onBoarding/model_onboarding.dart';
 import 'package:freeme/views/screen_authenticaation/screen_auth.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class ScreenOnBoarding extends StatefulWidget {
   const ScreenOnBoarding({super.key});
@@ -81,12 +80,6 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
           TextButton(
             onPressed: () {
               Get.offAll(() => const ScreenAuth());
-              // Navigator.pushReplacement(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => const ScreenAuth(),
-              //   ),
-              // );
             },
             child: Text(
               "Skip",
