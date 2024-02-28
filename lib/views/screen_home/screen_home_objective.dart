@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
@@ -22,7 +20,9 @@ class MissionObjective extends StatelessWidget {
             Container(
               height: 200,
               width: double.infinity,
-              decoration: BoxDecoration(color: ColorSystem.neutral_white),
+              decoration: const BoxDecoration(
+                color: ColorSystem.neutral_white,
+              ),
             ),
             Row(
               children: [
