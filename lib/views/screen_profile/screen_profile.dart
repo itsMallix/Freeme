@@ -176,6 +176,13 @@ class ScreenProfile extends StatelessWidget {
                 width: double.infinity,
                 child: BuildMilestone(),
               ),
+              Text(
+                "Pencapaian Misi Objektif",
+                style: TypographySystem.subtitle2.copyWith(
+                  color: ColorSystem.neutral_white,
+                ),
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
