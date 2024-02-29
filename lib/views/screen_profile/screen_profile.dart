@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:freeme/component/screen_home/home_milestoneStreak.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 
@@ -89,8 +90,34 @@ class ScreenProfile extends StatelessWidget {
                           color: ColorSystem.primary_electricIndigo,
                         ),
                       ),
-                      child: const Column(
-                        children: [Text("Test")],
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.circle,
+                                color: ColorSystem.negative_fieryRose,
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                "25 April 2023",
+                                style: TypographySystem.bodyText1.copyWith(
+                                  color: ColorSystem.neutral_metallicSilver,
+                                ),
+                              )
+                            ],
+                          ),
+                          Text(
+                            "Tanggal Bergabung",
+                            style: TypographySystem.subtitle3.copyWith(
+                              color: ColorSystem.neutral_white,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     const Spacer(),
@@ -103,9 +130,51 @@ class ScreenProfile extends StatelessWidget {
                           color: ColorSystem.primary_electricIndigo,
                         ),
                       ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.circle,
+                                color: ColorSystem.secondary_rajah,
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                "10 Mei 2023",
+                                style: TypographySystem.bodyText1.copyWith(
+                                  color: ColorSystem.neutral_metallicSilver,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            "Terakhir Bermain",
+                            style: TypographySystem.subtitle3.copyWith(
+                              color: ColorSystem.neutral_white,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                "Pencapaian Milestone Streak",
+                style: TypographySystem.subtitle1.copyWith(
+                  color: ColorSystem.neutral_white,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const SizedBox(
+                height: 150,
+                width: double.infinity,
+                child: BuildMilestone(),
               ),
             ],
           ),

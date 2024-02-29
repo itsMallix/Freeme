@@ -54,7 +54,7 @@ class ScreenClansDetail extends StatelessWidget {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.transparent,
-                          ColorSystem.primary_darkPurple
+                          ColorSystem.primary_darkPurple,
                         ],
                         stops: [0, .9],
                       ),
