@@ -48,7 +48,7 @@ class ScreenAuth extends StatelessWidget {
                   const SizedBox(height: 50),
                   GestureDetector(
                     onTap: () {
-                      Get.to(const ScreenSignIn());
+                      Get.to(() => const ScreenSignIn());
                     },
                     child: Transform(
                       alignment: Alignment.center,

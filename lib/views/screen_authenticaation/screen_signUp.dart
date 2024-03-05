@@ -170,7 +170,7 @@ class ScreenSignUp extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            Get.offAll(const ScreenDiagnose1());
+                            Get.offAll(() => const ScreenDiagnose1());
                           },
                           child: Text(
                             "Sign Up",

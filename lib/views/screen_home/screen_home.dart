@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/screen_home/home_bannerObjective.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
 import 'package:freeme/component/screen_home/home_historyPath.dart';
@@ -141,11 +144,38 @@ class ScreenHome extends StatelessWidget {
                             Row(
                               children: [
                                 const SizedBox(height: 20),
-                                Container(
-                                  height: 50,
-                                  width: 50,
-                                  decoration: const BoxDecoration(
-                                    gradient: ColorSystem.gradient_crayolaBlue,
+                                Stack(
+                                  children: [
+                                    Positioned(
+                                      bottom: 1,
+                                      child: Container(
+                                        height: 40,
+                                        width: 50,
+                                        decoration: BoxDecoration(
+                                          gradient:
+                                              ColorSystem.gradient_crayolaBlue,
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 50,
+                                      width: 50,
+                                      child: SvgPicture.asset(
+                                        "assets/images/character/char_1.svg",
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const Spacer(),
+                                IconButton(
+                                  onPressed: () {
+                                    Get.back();
+                                  },
+                                  icon: const Icon(
+                                    Icons.close_rounded,
+                                    color: ColorSystem.neutral_white,
                                   ),
                                 ),
                               ],
@@ -168,11 +198,11 @@ class ScreenHome extends StatelessWidget {
                             TextField(
                               style: TypographySystem.bodyText1
                                   .copyWith(color: ColorSystem.neutral_white),
-                              cursorColor: ColorSystem.primary_pastelOrange,
+                              cursorColor: ColorSystem.neutral_white,
                               decoration: InputDecoration(
                                 focusedBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: ColorSystem.primary_pastelOrange,
+                                    color: ColorSystem.neutral_white,
                                   ),
                                 ),
                                 hintText: "Set Goals (Hari)",
@@ -189,11 +219,11 @@ class ScreenHome extends StatelessWidget {
                             TextField(
                               style: TypographySystem.bodyText1
                                   .copyWith(color: ColorSystem.neutral_white),
-                              cursorColor: ColorSystem.primary_pastelOrange,
+                              cursorColor: ColorSystem.neutral_white,
                               decoration: InputDecoration(
                                 focusedBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: ColorSystem.primary_pastelOrange,
+                                    color: ColorSystem.neutral_white,
                                   ),
                                 ),
                                 hintText: "Catatan Petualangan",

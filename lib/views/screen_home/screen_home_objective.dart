@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
 
@@ -7,6 +8,10 @@ class MissionObjective extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lockedMedal = SvgPicture.asset(
+      "assets/images/screen_home/objective_medal.svg",
+    );
+
     return Scaffold(
       backgroundColor: ColorSystem.primary_darkPurple,
       appBar: AppBar(
@@ -16,12 +21,53 @@ class MissionObjective extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               height: 200,
               width: double.infinity,
-              decoration: const BoxDecoration(
-                color: ColorSystem.neutral_white,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 80,
+                    width: double.infinity,
+                    child: SvgPicture.asset(
+                      "assets/images/screen_home/objective_banner.svg",
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    "Misi Objektif",
+                    style: TypographySystem.heading2.copyWith(
+                      color: ColorSystem.neutral_white,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: TypographySystem.bodyText1.copyWith(
+                        color: ColorSystem.neutral_white,
+                      ),
+                      children: <TextSpan>[
+                        const TextSpan(
+                          text:
+                              "Selesaikan misi dibawah ini dan kamu akan mendapatkan lima pencapaian",
+                        ),
+                        TextSpan(
+                          text: " 100 Koin",
+                          style: TypographySystem.bodyText1.copyWith(
+                            color: ColorSystem.primary_pastelOrange,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const TextSpan(
+                          text: " setelah menyelesaikannya!",
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
             Row(
@@ -36,7 +82,7 @@ class MissionObjective extends StatelessWidget {
                 Text(
                   "0%",
                   style: TypographySystem.subtitle1.copyWith(
-                    color: ColorSystem.secondary_cyanCornflower,
+                    color: ColorSystem.primary_pastelOrange,
                   ),
                 )
               ],
@@ -53,12 +99,10 @@ class MissionObjective extends StatelessWidget {
             const SizedBox(height: 20),
             Row(
               children: [
-                Container(
+                SizedBox(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(
-                    color: ColorSystem.primary_pastelOrange,
-                  ),
+                  child: lockedMedal,
                 ),
                 const SizedBox(width: 10),
                 Column(
@@ -73,7 +117,7 @@ class MissionObjective extends StatelessWidget {
                     SizedBox(
                       width: 300,
                       child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                        "Tambah dan tetapkan tujuan utamamu sebagai langkah untuk meninggalkan kebiasaan PMO",
                         style: TypographySystem.caption.copyWith(
                           color: ColorSystem.neutral_white,
                         ),
@@ -88,27 +132,25 @@ class MissionObjective extends StatelessWidget {
             const SizedBox(height: 20),
             Row(
               children: [
-                Container(
+                SizedBox(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(
-                    color: ColorSystem.primary_pastelOrange,
-                  ),
+                  child: lockedMedal,
                 ),
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Set Goals",
+                      "Habits Baik",
                       style: TypographySystem.subtitle1.copyWith(
                         color: ColorSystem.neutral_white,
                       ),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 250,
                       child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                        "Ciptakan kebiasaan baru sebagai langkah untuk meninggalkan kebiasaan lama",
                         style: TypographySystem.caption.copyWith(
                           color: ColorSystem.neutral_white,
                         ),
@@ -123,27 +165,25 @@ class MissionObjective extends StatelessWidget {
             const SizedBox(height: 20),
             Row(
               children: [
-                Container(
+                SizedBox(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(
-                    color: ColorSystem.primary_pastelOrange,
-                  ),
+                  child: lockedMedal,
                 ),
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Set Goals",
+                      "Rutinitas Terstruktur",
                       style: TypographySystem.subtitle1.copyWith(
                         color: ColorSystem.neutral_white,
                       ),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 250,
                       child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                        "Atur rutinitasmu sehari-hari dalam menjalani kehidupan di dunia nyata dengan lebih baik",
                         style: TypographySystem.caption.copyWith(
                           color: ColorSystem.neutral_white,
                         ),
@@ -158,27 +198,25 @@ class MissionObjective extends StatelessWidget {
             const SizedBox(height: 20),
             Row(
               children: [
-                Container(
+                SizedBox(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(
-                    color: ColorSystem.primary_pastelOrange,
-                  ),
+                  child: lockedMedal,
                 ),
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Set Goals",
+                      "Gabung Clan",
                       style: TypographySystem.subtitle1.copyWith(
                         color: ColorSystem.neutral_white,
                       ),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 250,
                       child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                        "Gabung dengan clan guna menjaga komitmen kamu yang ingin kamu wujudkan",
                         style: TypographySystem.caption.copyWith(
                           color: ColorSystem.neutral_white,
                         ),
@@ -193,27 +231,25 @@ class MissionObjective extends StatelessWidget {
             const SizedBox(height: 20),
             Row(
               children: [
-                Container(
+                SizedBox(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(
-                    color: ColorSystem.primary_pastelOrange,
-                  ),
+                  child: lockedMedal,
                 ),
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Set Goals",
+                      "Minta Pertolongan",
                       style: TypographySystem.subtitle1.copyWith(
                         color: ColorSystem.neutral_white,
                       ),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 250,
                       child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                        "Ketika merasa berhasrat cobalah meminta pertolongan pada partner satu clanmu",
                         style: TypographySystem.caption.copyWith(
                           color: ColorSystem.neutral_white,
                         ),
