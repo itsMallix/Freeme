@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:freeme/component/screen_home/home_bannerObjective.dart';
 import 'package:freeme/component/screen_home/home_characterStats.dart';
 import 'package:freeme/component/screen_home/home_historyPath.dart';
@@ -47,10 +50,13 @@ class ScreenHome extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               GestureDetector(
-                  onTap: () {
-                    Get.to(const MissionObjective());
-                  },
-                  child: const BannerObjective()),
+                onTap: () {
+                  Get.to(
+                    () => const MissionObjective(),
+                  );
+                },
+                child: const BannerObjective(),
+              ),
               const SizedBox(height: 30),
               CircularPercentIndicator(
                 backgroundColor: ColorSystem.neutral_white.withOpacity(0.2),
@@ -127,7 +133,136 @@ class ScreenHome extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.dialog(
+                      AlertDialog(
+                        backgroundColor: ColorSystem.secondary_grapePurple,
+                        title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(height: 20),
+                                Stack(
+                                  children: [
+                                    Positioned(
+                                      bottom: 1,
+                                      child: Container(
+                                        height: 40,
+                                        width: 50,
+                                        decoration: BoxDecoration(
+                                          gradient:
+                                              ColorSystem.gradient_crayolaBlue,
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 50,
+                                      width: 50,
+                                      child: SvgPicture.asset(
+                                        "assets/images/character/char_1.svg",
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const Spacer(),
+                                IconButton(
+                                  onPressed: () {
+                                    Get.back();
+                                  },
+                                  icon: const Icon(
+                                    Icons.close_rounded,
+                                    color: ColorSystem.neutral_white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 5),
+                            Text(
+                              "Tetapkan Tujuan Perjalanan Tanpa PMO!",
+                              style: TypographySystem.subtitle3.copyWith(
+                                color: ColorSystem.neutral_white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "Mari Kita Lawan!",
+                              style: TypographySystem.caption.copyWith(
+                                color: ColorSystem.neutral_metallicSilver,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            TextField(
+                              style: TypographySystem.bodyText1
+                                  .copyWith(color: ColorSystem.neutral_white),
+                              cursorColor: ColorSystem.neutral_white,
+                              decoration: InputDecoration(
+                                focusedBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: ColorSystem.neutral_white,
+                                  ),
+                                ),
+                                hintText: "Set Goals (Hari)",
+                                hintStyle: TypographySystem.bodyText1.copyWith(
+                                  color: ColorSystem.neutral_metallicSilver,
+                                ),
+                                suffixIcon: const Icon(
+                                  Icons.radar,
+                                  color: ColorSystem.neutral_metallicSilver,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            TextField(
+                              style: TypographySystem.bodyText1
+                                  .copyWith(color: ColorSystem.neutral_white),
+                              cursorColor: ColorSystem.neutral_white,
+                              decoration: InputDecoration(
+                                focusedBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: ColorSystem.neutral_white,
+                                  ),
+                                ),
+                                hintText: "Catatan Petualangan",
+                                hintStyle: TypographySystem.bodyText1.copyWith(
+                                  color: ColorSystem.neutral_metallicSilver,
+                                ),
+                                suffixIcon: const Icon(
+                                  Icons.edit_square,
+                                  color: ColorSystem.neutral_metallicSilver,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+                            Container(
+                              height: 50,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                gradient: ColorSystem.gradient_crayolaBlue,
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shadowColor: ColorSystem.transparent,
+                                  backgroundColor: ColorSystem.transparent,
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  "Set Goals",
+                                  style: TypographySystem.subtitle3.copyWith(
+                                    color: ColorSystem.neutral_white,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
                   child: Text(
                     "Set Goals",
                     style: TypographySystem.heading2.copyWith(

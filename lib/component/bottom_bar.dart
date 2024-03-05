@@ -83,7 +83,7 @@ class MainScreenState extends State<MainScreen> {
           elevation: 0,
           shape: const CircleBorder(),
           onPressed: () {
-            Get.to(const ScreenClansMain());
+            Get.to(() => const ScreenClansMain());
           },
           child: Container(
             width: 80,

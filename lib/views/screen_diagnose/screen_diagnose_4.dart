@@ -236,7 +236,7 @@ class ScreenDiagnose4 extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: ColorSystem.primary_pastelOrange,
         onPressed: () {
-          Get.offAll(const MainScreen());
+          Get.offAll(() => const MainScreen());
         },
         child: const Icon(
           Icons.navigate_next_rounded,
