@@ -11,6 +11,7 @@ class ScreenSignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: ColorSystem.primary_darkPurple,
       appBar: AppBar(
         leading: IconButton(
@@ -30,184 +31,205 @@ class ScreenSignUp extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              Center(
-                child: SizedBox(
-                  width: 200,
-                  child: SvgPicture.asset("assets/images/logo_app_white.svg"),
-                ),
+      body: Stack(
+        children: [
+          Center(
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: SvgPicture.asset(
+                "assets/images/bg_app_login.svg",
+                fit: BoxFit.cover,
               ),
-              const SizedBox(height: 50),
-              Form(
-                child: Column(
-                  children: [
-                    TextField(
-                      style: TypographySystem.bodyText1
-                          .copyWith(color: ColorSystem.neutral_white),
-                      cursorColor: ColorSystem.primary_pastelOrange,
-                      decoration: InputDecoration(
-                        focusedBorder: const UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: ColorSystem.primary_pastelOrange,
+            ),
+          ),
+          Center(
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: ColorSystem.tertiary_erieBlack.withOpacity(0.5),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              children: [
+                Center(
+                  child: SizedBox(
+                    width: 200,
+                    child: SvgPicture.asset("assets/images/logo_app_white.svg"),
+                  ),
+                ),
+                const SizedBox(height: 50),
+                Form(
+                  child: Column(
+                    children: [
+                      TextField(
+                        style: TypographySystem.bodyText1
+                            .copyWith(color: ColorSystem.neutral_white),
+                        cursorColor: ColorSystem.primary_pastelOrange,
+                        decoration: InputDecoration(
+                          focusedBorder: const UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: ColorSystem.primary_pastelOrange,
+                            ),
                           ),
-                        ),
-                        focusColor: ColorSystem.neutral_metallicSilver,
-                        hintText: "Username",
-                        hintStyle: TypographySystem.bodyText1.copyWith(
-                            color: ColorSystem.neutral_metallicSilver),
-                        contentPadding: const EdgeInsets.only(top: 10.0),
-                        suffixIcon: const Icon(
-                          Icons.person,
-                          color: ColorSystem.neutral_metallicSilver,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    TextField(
-                      style: TypographySystem.bodyText1
-                          .copyWith(color: ColorSystem.neutral_white),
-                      cursorColor: ColorSystem.primary_pastelOrange,
-                      decoration: InputDecoration(
-                        focusedBorder: const UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: ColorSystem.primary_pastelOrange,
-                          ),
-                        ),
-                        focusColor: ColorSystem.neutral_metallicSilver,
-                        hintText: "Alamat Email",
-                        hintStyle: TypographySystem.bodyText1.copyWith(
-                            color: ColorSystem.neutral_metallicSilver),
-                        contentPadding: const EdgeInsets.only(top: 10.0),
-                        suffixIcon: const Icon(
-                          Icons.email_rounded,
-                          color: ColorSystem.neutral_metallicSilver,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    TextField(
-                      style: TypographySystem.bodyText1
-                          .copyWith(color: ColorSystem.neutral_white),
-                      cursorColor: ColorSystem.primary_pastelOrange,
-                      decoration: InputDecoration(
-                        focusedBorder: const UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: ColorSystem.primary_pastelOrange,
-                          ),
-                        ),
-                        focusColor: ColorSystem.neutral_metallicSilver,
-                        hintText: "Kata Sandi",
-                        hintStyle: TypographySystem.bodyText1.copyWith(
-                            color: ColorSystem.neutral_metallicSilver),
-                        contentPadding: const EdgeInsets.only(top: 10.0),
-                        suffixIcon: const Icon(
-                          Icons.lock_rounded,
-                          color: ColorSystem.neutral_metallicSilver,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    TextField(
-                      style: TypographySystem.bodyText1
-                          .copyWith(color: ColorSystem.neutral_white),
-                      cursorColor: ColorSystem.primary_pastelOrange,
-                      decoration: InputDecoration(
-                        focusedBorder: const UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: ColorSystem.primary_pastelOrange,
-                          ),
-                        ),
-                        focusColor: ColorSystem.neutral_metallicSilver,
-                        hintText: "Konfirmasi Kata Sandi",
-                        hintStyle: TypographySystem.bodyText1.copyWith(
-                            color: ColorSystem.neutral_metallicSilver),
-                        contentPadding: const EdgeInsets.only(top: 10.0),
-                        suffixIcon: const Icon(
-                          Icons.lock_rounded,
-                          color: ColorSystem.neutral_metallicSilver,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-                    Container(
-                      height: 50,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        gradient: ColorSystem.gradient_icterineBeer,
-                      ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          shadowColor: Colors.transparent,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ),
-                        onPressed: () {
-                          Get.offAll(const ScreenDiagnose1());
-                        },
-                        child: Text(
-                          "Sign Up",
-                          style: TypographySystem.subtitle2.copyWith(
-                            color: ColorSystem.neutral_white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      children: [
-                        const Expanded(child: Divider()),
-                        const SizedBox(width: 10),
-                        Text(
-                          "Atau",
-                          style: TypographySystem.subtitle3.copyWith(
+                          focusColor: ColorSystem.neutral_metallicSilver,
+                          hintText: "Username",
+                          hintStyle: TypographySystem.bodyText1.copyWith(
                               color: ColorSystem.neutral_metallicSilver),
-                        ),
-                        const SizedBox(width: 10),
-                        const Expanded(child: Divider()),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    Container(
-                      height: 50,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Colors.transparent,
-                        border: Border.all(
-                          color: ColorSystem.primary_electricIndigo,
+                          contentPadding: const EdgeInsets.only(top: 10.0),
+                          suffixIcon: const Icon(
+                            Icons.person,
+                            color: ColorSystem.neutral_metallicSilver,
+                          ),
                         ),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.g_mobiledata_rounded,
-                            color: ColorSystem.neutral_white,
+                      const SizedBox(height: 15),
+                      TextField(
+                        style: TypographySystem.bodyText1
+                            .copyWith(color: ColorSystem.neutral_white),
+                        cursorColor: ColorSystem.primary_pastelOrange,
+                        decoration: InputDecoration(
+                          focusedBorder: const UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: ColorSystem.primary_pastelOrange,
+                            ),
                           ),
-                          const SizedBox(width: 10),
-                          Text(
-                            "Daftar dengan Google",
-                            style: TypographySystem.subtitle3.copyWith(
+                          focusColor: ColorSystem.neutral_metallicSilver,
+                          hintText: "Alamat Email",
+                          hintStyle: TypographySystem.bodyText1.copyWith(
+                              color: ColorSystem.neutral_metallicSilver),
+                          contentPadding: const EdgeInsets.only(top: 10.0),
+                          suffixIcon: const Icon(
+                            Icons.email_rounded,
+                            color: ColorSystem.neutral_metallicSilver,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 15),
+                      TextField(
+                        style: TypographySystem.bodyText1
+                            .copyWith(color: ColorSystem.neutral_white),
+                        cursorColor: ColorSystem.primary_pastelOrange,
+                        decoration: InputDecoration(
+                          focusedBorder: const UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: ColorSystem.primary_pastelOrange,
+                            ),
+                          ),
+                          focusColor: ColorSystem.neutral_metallicSilver,
+                          hintText: "Kata Sandi",
+                          hintStyle: TypographySystem.bodyText1.copyWith(
+                              color: ColorSystem.neutral_metallicSilver),
+                          contentPadding: const EdgeInsets.only(top: 10.0),
+                          suffixIcon: const Icon(
+                            Icons.lock_rounded,
+                            color: ColorSystem.neutral_metallicSilver,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 15),
+                      TextField(
+                        style: TypographySystem.bodyText1
+                            .copyWith(color: ColorSystem.neutral_white),
+                        cursorColor: ColorSystem.primary_pastelOrange,
+                        decoration: InputDecoration(
+                          focusedBorder: const UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: ColorSystem.primary_pastelOrange,
+                            ),
+                          ),
+                          focusColor: ColorSystem.neutral_metallicSilver,
+                          hintText: "Konfirmasi Kata Sandi",
+                          hintStyle: TypographySystem.bodyText1.copyWith(
+                              color: ColorSystem.neutral_metallicSilver),
+                          contentPadding: const EdgeInsets.only(top: 10.0),
+                          suffixIcon: const Icon(
+                            Icons.lock_rounded,
+                            color: ColorSystem.neutral_metallicSilver,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 50),
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          gradient: ColorSystem.gradient_icterineBeer,
+                        ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                          onPressed: () {
+                            Get.offAll(const ScreenDiagnose1());
+                          },
+                          child: Text(
+                            "Sign Up",
+                            style: TypographySystem.subtitle2.copyWith(
                               color: ColorSystem.neutral_white,
                             ),
                           ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        children: [
+                          const Expanded(child: Divider()),
+                          const SizedBox(width: 10),
+                          Text(
+                            "Atau",
+                            style: TypographySystem.subtitle3.copyWith(
+                                color: ColorSystem.neutral_metallicSilver),
+                          ),
+                          const SizedBox(width: 10),
+                          const Expanded(child: Divider()),
                         ],
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 20),
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.transparent,
+                          border: Border.all(
+                            color: ColorSystem.primary_electricIndigo,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.g_mobiledata_rounded,
+                              color: ColorSystem.neutral_white,
+                            ),
+                            const SizedBox(width: 10),
+                            Text(
+                              "Daftar dengan Google",
+                              style: TypographySystem.subtitle3.copyWith(
+                                color: ColorSystem.neutral_white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

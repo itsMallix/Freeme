@@ -19,6 +19,7 @@ class ColorSystem {
 
   static const Color neutral_white = Color(0xffffffff);
   static const Color neutral_metallicSilver = Color(0xffa7a4ae);
+  static const Color transparent = Colors.transparent;
 
   static const LinearGradient gradient_icterineBeer = LinearGradient(
     colors: [
