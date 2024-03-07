@@ -36,7 +36,9 @@ class _ScreenSplashState extends State<ScreenSplash> {
               padding: const EdgeInsets.all(8.0),
               height: 200,
               width: 200,
-              child: SvgPicture.asset("assets/images/logo_app_full.svg"),
+              child: SvgPicture.asset(
+                "assets/images/logo_app_full.svg",
+              ),
             ),
           ),
           const Spacer(),
@@ -45,8 +47,9 @@ class _ScreenSplashState extends State<ScreenSplash> {
               height: 30,
               child: Text(
                 "Alright Reserved By Freeme",
-                style: TypographySystem.caption
-                    .copyWith(color: ColorSystem.neutral_metallicSilver),
+                style: TypographySystem.caption.copyWith(
+                  color: ColorSystem.neutral_metallicSilver,
+                ),
               ),
             ),
           )
