@@ -91,8 +91,9 @@ class ScreenDiagnose2 extends StatelessWidget {
                         ),
                         Text(
                           "Laki-laki",
-                          style: TypographySystem.subtitle2
-                              .copyWith(color: ColorSystem.neutral_white),
+                          style: TypographySystem.subtitle2.copyWith(
+                            color: ColorSystem.neutral_white,
+                          ),
                         )
                       ],
                     ),
