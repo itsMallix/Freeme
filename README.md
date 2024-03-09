@@ -17,4 +17,5 @@
 - Flutter
 - Firebase
 - GetX
+- Others
 
