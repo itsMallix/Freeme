@@ -1,7 +1,9 @@
 import 'dart:collection';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freeme/component/screen_home/home_milestoneStreak.dart';
 import 'package:freeme/component/theme/system_color.dart';
 import 'package:freeme/component/theme/system_typography.dart';
@@ -216,7 +218,7 @@ class ScreenProfile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: SizedBox(
-                  height: 500,
+                  height: 530,
                   width: double.infinity,
                   child: GridView.builder(
                     gridDelegate:
@@ -227,23 +229,51 @@ class ScreenProfile extends StatelessWidget {
                     ),
                     itemCount: objectiveData.length,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (
-                      (context, index) {
-                        final data = objectiveData[index];
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: ColorSystem.primary_electricIndigo,
-                            ),
+                    itemBuilder: ((context, index) {
+                      final data = objectiveData[index];
+                      return Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(
+                            color: ColorSystem.primary_electricIndigo,
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: 70,
+                              width: 70,
+                              child: SvgPicture.asset(data.image),
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              data.title,
+                              style: TypographySystem.bodyText2.copyWith(
+                                color: ColorSystem.neutral_white,
+                              ),
+                            )
+                          ],
+                        ),
+                      );
+                    }),
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
+              const Divider(color: ColorSystem.neutral_metallicSilver),
+              const SizedBox(height: 20),
+              Align(
+                alignment: Alignment.topRight,
+                child: Text(
+                  "Copyright @freeme 2024",
+                  style: TypographySystem.caption.copyWith(
+                    color: ColorSystem.neutral_metallicSilver,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
