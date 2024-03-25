@@ -123,6 +123,7 @@ class ScreenDiagnose3 extends StatelessWidget {
         },
         child: const Icon(
           Icons.navigate_next_rounded,
+          color: ColorSystem.neutral_white,
         ),
       ),
     );
