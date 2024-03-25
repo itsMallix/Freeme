@@ -127,8 +127,6 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
                   const Spacer(),
                 ],
               ),
-              // if (_pageIndex == onboardingData.length - 1)
-
               const SizedBox(height: 80),
             ],
           ),
